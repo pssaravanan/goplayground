@@ -20,10 +20,11 @@ func SortArray(nums []int) []int {
 		j := 0
 		fmt.Println(nums, leftarray, rightarray)
 		for i < len(leftarray) || j < len(rightarray) {
-			if j >= len(rightarray) || leftarray[i] < rightarray[j] {
+			fmt.Println("index", i, j)
+			if j >= len(rightarray) || (i < len(leftarray) && leftarray[i] < rightarray[j]) {
 				result = append(result, leftarray[i])
 				i = i + 1
-			} else if i >= len(leftarray) || rightarray[j] < leftarray[i] {
+			} else if i >= len(leftarray) || (j < len(rightarray) && rightarray[j] < leftarray[i]) {
 				result = append(result, rightarray[j])
 				j = j + 1
 			}
